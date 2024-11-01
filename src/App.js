@@ -9,7 +9,7 @@ import {
 
 function App() {
   const [maxError, setMaxError] = useState(0);
-  const [answerLength, setAnswerLength] = useState(0);
+  const [answerLength, setAnswerLength] = useState(3);
   const [secretWord, setSecretWord] = useState('');
 
   useEffect(()=>{

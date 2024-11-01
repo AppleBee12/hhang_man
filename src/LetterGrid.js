@@ -7,11 +7,11 @@ const LetterGrid = ({ secretWord, guessedLetters, answerLength, complete }) => {
   //행맨을 성공했을 때 알림을 띄우자!--->
   //answer값이 변경되면 answerLength와 비교해서 정답여부 파악
   useEffect(()=>{
-    if(answer === answerLength){
+    if(answerLength > 0 && answer === answerLength){
       alert('정답입니다!')
       complete();
     }
-  },[answer]);
+  },[answer, answerLength, complete]);
 
 
   // guessedLetters의 값이 변경되면 answer를 업데이트
@@ -23,7 +23,7 @@ const LetterGrid = ({ secretWord, guessedLetters, answerLength, complete }) => {
     setAnswer(newCount);
 
     console.log('useEffect실행', newCount);
-  },[guessedLetters])
+  },[guessedLetters, secretWord])
 
   //<---행맨을 성공했을 때!
   //방법1: let letters = secretWord.split('').map(letter=> <span>{letter}</span> )
