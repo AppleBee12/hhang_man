@@ -4,12 +4,14 @@ import Letter from './Letter';
 const LetterGrid = ({ secretWord, guessedLetters, answerLength, complete }) => {
 
   const [answer, setAnswer] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
   //행맨을 성공했을 때 알림을 띄우자!--->
   //answer값이 변경되면 answerLength와 비교해서 정답여부 파악
   useEffect(()=>{
-    if(answerLength > 0 && answer === answerLength){
+    if(answerLength > 0 && answer === answerLength && !isComplete){
       alert('정답입니다!')
       complete();
+      setIsComplete(true);
     }
   },[answer, answerLength, complete]);
 
