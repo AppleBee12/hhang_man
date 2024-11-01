@@ -1,5 +1,4 @@
 import React from 'react';
-import LetterGrid from './LetterGrid';
 import './App.css';
 
 
